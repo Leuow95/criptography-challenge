@@ -18,5 +18,36 @@ public class Transaction {
     @Column(name = "value", nullable = false)
     private Long value;
 
+    public Transaction(Long id,String userDocument, String creditCardToken, Long value) {
+        this.id = id;
+        this.userDocument = userDocument;
+        this.creditCardToken = creditCardToken;
+        this.value = value;
+    }
 
+    public String getUserDocument() {
+        return userDocument;
+    }
+
+    public void setUserDocument(String userDocument) {
+        this.userDocument = userDocument;
+    }
+
+    public String getCreditCardToken() {
+        return creditCardToken;
+    }
+
+    public void setCreditCardToken(String creditCardToken) {
+        this.creditCardToken = creditCardToken;
+    }
+
+    public Long getValue() {
+        return value;
+    }
+
+    public void setValue(Long value) {
+        this.value = value;
+    }
+
+    public Transaction(){ }
 }
