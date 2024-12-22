@@ -7,6 +7,7 @@ import dev.leomaia.criptography_challenge.exceptions.TransactionNotFoundExceptio
 import dev.leomaia.criptography_challenge.repositories.TransactionRepository;
 import dev.leomaia.criptography_challenge.utils.CryptographyHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -68,9 +69,9 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public List<TransactionResponseDTO> getTransactions(Pageable pageable) {
+    public Page<TransactionResponseDTO> getTransactions(Pageable pageable) {
         var transactionsPage = transactionRepository.findAll(pageable);
 
-        return transactionsPage.stream().map(TransactionResponseDTO::fromEntity).toList();
+        return transactionsPage.map(TransactionResponseDTO::fromEntity);
     }
 }
