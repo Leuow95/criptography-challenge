@@ -19,7 +19,7 @@ public class Transaction {
     private Long value;
 
     public Transaction(Long id,String userDocument, String creditCardToken, Long value) {
-        this.id = id;
+        this.setId(id);
         this.userDocument = userDocument;
         this.creditCardToken = creditCardToken;
         this.value = value;
@@ -50,4 +50,12 @@ public class Transaction {
     }
 
     public Transaction(){ }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
