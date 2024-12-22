@@ -1,9 +1,12 @@
 package dev.leomaia.criptography_challenge.utils;
 
+import org.springframework.stereotype.Component;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
+@Component
 public class CryptographyHandler {
 
     private static final String SECRET_KEY = "1234567890uyitjf";
